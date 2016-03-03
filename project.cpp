@@ -65,6 +65,8 @@ void mode(double *a,int n)
 				
 				c=1;
 			}
+			else
+				c=1;
 
 		}
    }
@@ -145,7 +147,7 @@ int _tmain(int argc, _TCHAR* argv[])
     double *a;
 	int n;
 	
-	
+	     cout<<"Ex: enter size data:5\n    enter data: 5 52 2 2 1 \n\n";
 		cout<<"enter your data size : ";
 		cin>>n;
 		cout<<"enter your data : \n";
