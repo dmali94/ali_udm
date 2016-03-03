@@ -119,6 +119,7 @@ ql quantile(double *a,int n)
 	}
 	return q;
 }
+
 double iqr(double*a,int n)
 {
 	ql as;
@@ -140,6 +141,19 @@ void outliers(double*a,int n)
 	}
 
 }
+double sd (double*a,int n)     ///////    standard deviation 
+{
+	double mead=mean(a,0,n);
+	double sum=0,t;
+	
+	for(int i=0;i<n;i++)
+	{
+		t=mead-a[i];
+		sum+=pow(t,2.);
+	}
+	sum/=n;
+	return sqrt(sum);
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -159,7 +173,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		cin>>a[i];
 	}
 	sort(a,a+n);
-	
+	double t=sd(a,n);
+	cout<<t<<endl;
 	cout<<"mean = "<<mean(a,0,n)<<"\n";
 	cout<<"median = "<<medain(a,n)<<"\n";
     mode(a, n);
